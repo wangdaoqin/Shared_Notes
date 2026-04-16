@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R语言入门教程</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #4CAF50;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #4CAF50;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .back-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>R语言入门教程</h1>
+        
+        <h2>1. R语言简介</h2>
+        <p>R语言是一种用于统计分析和数据可视化的编程语言。它是开源的，拥有强大的包生态系统，广泛应用于数据科学、机器学习和统计分析领域。</p>
+        
+        <h2>2. 基础语法</h2>
+        <h3>2.1 变量赋值</h3>
+        <pre># 基本赋值
+x <- 5
+y = 10
+
+# 打印变量
+print(x)
+cat("y =", y, "\n")</pre>
+        
+        <h3>2.2 数据类型</h3>
+        <pre># 数值型
+num <- 3.14
+
+# 字符型
+str <- "Hello, R!"
+
+# 逻辑型
+logic <- TRUE
+
+# 查看数据类型
+class(num)
+class(str)
+class(logic)</pre>
+        
+        <h3>2.3 向量</h3>
+        <pre># 创建向量
+vec <- c(1, 2, 3, 4, 5)
+
+# 向量运算
+vec * 2
+vec + 1
+
+# 访问向量元素
+vec[2]  # 访问第二个元素
+vec[1:3]  # 访问前三个元素</pre>
+        
+        <h2>3. 数据处理</h2>
+        <h3>3.1 数据框</h3>
+        <pre># 创建数据框
+df <- data.frame(
+  name = c("张三", "李四", "王五"),
+  age = c(20, 25, 30),
+  score = c(85, 90, 78)
+)
+
+# 查看数据框
+print(df)
+
+# 访问列
+df$name
+df[, "age"]</pre>
+        
+        <h3>3.2 数据导入</h3>
+        <pre># 从CSV文件导入数据
+data <- read.csv("data.csv")
+
+# 从Excel文件导入数据
+# 需要安装readxl包
+# install.packages("readxl")
+library(readxl)
+data <- read_excel("data.xlsx")</pre>
+        
+        <h2>4. 数据可视化</h2>
+        <h3>4.1 基本绘图</h3>
+        <pre># 折线图
+x <- 1:10
+y <- x^2
+plot(x, y, type = "l", main = "折线图", xlab = "X", ylab = "Y")
+
+# 散点图
+plot(x, y, type = "p", main = "散点图", col = "red")
+
+# 直方图
+data <- rnorm(1000)
+hist(data, main = "直方图")</pre>
+        
+        <h3>4.2 使用ggplot2</h3>
+        <pre># 安装并加载ggplot2包
+# install.packages("ggplot2")
+library(ggplot2)
+
+# 创建数据
+df <- data.frame(
+  x = 1:10,
+  y = x^2
+)
+
+# 绘制散点图
+ggplot(df, aes(x = x, y = y)) +
+  geom_point(color = "blue", size = 3) +
+  labs(title = "散点图", x = "X轴", y = "Y轴") +
+  theme_minimal()</pre>
+        
+        <h2>5. 函数定义</h2>
+        <pre># 定义函数
+my_function <- function(x, y) {
+  result <- x + y
+  return(result)
+}
+
+# 调用函数
+my_function(3, 5)</pre>
+        
+        <h2>6. 包的使用</h2>
+        <pre># 安装包
+install.packages("dplyr")
+
+# 加载包
+library(dplyr)
+
+# 使用包中的函数
+df %>% 
+  filter(age > 20) %>% 
+  select(name, score) %>% 
+  arrange(desc(score))</pre>
+        
+        <h2>7. 常用快捷键</h2>
+        <ul>
+            <li>Ctrl + Enter: 运行当前行</li>
+            <li>Ctrl + Shift + Enter: 运行整个脚本</li>
+            <li>Alt + -: 插入赋值运算符 (<-)</li>
+            <li>Ctrl + Shift + M: 插入管道运算符 (%>%)</li>
+        </ul>
+        
+        <h2>8. 学习资源</h2>
+        <ul>
+            <li><a href="https://www.r-project.org/" target="_blank">R官方网站</a></li>
+            <li><a href="https://www.rstudio.com/" target="_blank">RStudio</a></li>
+            <li><a href="https://cran.r-project.org/" target="_blank">CRAN包仓库</a></li>
+            <li><a href="https://r4ds.had.co.nz/" target="_blank">R for Data Science</a></li>
+        </ul>
+        
+        <a href="../index.html" class="back-link">返回笔记库</a>
+    </div>
+</body>
+</html>
