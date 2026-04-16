@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人笔记库</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .note-list {
+            margin-top: 30px;
+        }
+        .note-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #4CAF50;
+        }
+        .note-item h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .note-item p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        .note-links a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .note-links a:hover {
+            background-color: #45a049;
+        }
+        .instructions {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e8f5e8;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>个人笔记库</h1>
+        
+        <div class="note-list">
+            <div class="note-item">
+                <h2>R语言教程</h2>
+                <p>这是一份R语言入门教程，包含基础语法、数据处理和可视化等内容。</p>
+                <div class="note-links">
+                    <a href="R语言教程.html">查看HTML版本</a>
+                </div>
+            </div>
+            
+            <div class="note-item">
+                <h2>Vibe Coding 心得</h2>
+                <p>关于Vibe Coding的学习心得和实践经验分享。</p>
+                <div class="note-links">
+                    <a href="vibe coding心得.md">查看Markdown版本</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>如何更新网站</h2>
+            <ol>
+                <li>在本地编辑Markdown文件（.md）</li>
+                <li>如果需要HTML版本，可以使用Markdown编辑器转换</li>
+                <li>将更新后的文件保存到本目录</li>
+                <li>提交到GitHub仓库</li>
+                <li>GitHub Pages会自动更新网站</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
