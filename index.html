@@ -6,93 +6,192 @@
     <title>个人笔记库</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #333;
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 40px 0;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .note-list {
-            margin-top: 30px;
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 600;
         }
-        .note-item {
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .category-section {
+            margin-bottom: 50px;
+        }
+        .category-title {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #4CAF50;
+        }
+        .note-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .note-card {
             background-color: #f9f9f9;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border-left: 4px solid #4CAF50;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .note-item h2 {
+        .note-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .note-card h3 {
             margin-top: 0;
             color: #333;
-        }
-        .note-item p {
+            font-size: 1.3em;
             margin-bottom: 10px;
+        }
+        .note-card p {
+            margin-bottom: 15px;
             color: #666;
+            font-size: 0.95em;
+        }
+        .note-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .note-links a {
             display: inline-block;
-            margin-right: 10px;
-            padding: 5px 10px;
+            padding: 8px 15px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
-            border-radius: 3px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            transition: background-color 0.3s ease;
         }
         .note-links a:hover {
             background-color: #45a049;
         }
         .instructions {
-            margin-top: 40px;
-            padding: 20px;
+            margin-top: 60px;
+            padding: 30px;
             background-color: #e8f5e8;
-            border-radius: 5px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+        .instructions h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .note-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>个人笔记库</h1>
+        <div class="header">
+            <h1>个人笔记库</h1>
+            <p>收集和管理我的学习笔记与资料</p>
+        </div>
         
-        <div class="note-list">
-            <div class="note-item">
-                <h2>R语言教程</h2>
-                <p>这是一份R语言入门教程，包含基础语法、数据处理和可视化等内容。</p>
-                <div class="note-links">
-                    <a href="R语言教程.html">查看HTML版本</a>
+        <div class="content">
+            <!-- R语言分类 -->
+            <div class="category-section">
+                <h2 class="category-title">📊 R语言</h2>
+                <div class="note-grid">
+                    <div class="note-card">
+                        <h3>R语言教程</h3>
+                        <p>这是一份R语言入门教程，包含基础语法、数据处理和可视化等内容。</p>
+                        <div class="note-links">
+                            <a href="R语言教程.html">查看HTML版本</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="note-item">
-                <h2>Vibe Coding 心得</h2>
-                <p>关于Vibe Coding的学习心得和实践经验分享。</p>
-                <div class="note-links">
-                    <a href="vibe coding心得.md">查看Markdown版本</a>
+            <!-- 公共卫生分类 -->
+            <div class="category-section">
+                <h2 class="category-title">🏥 公共卫生</h2>
+                <div class="note-grid">
+                    <!-- 后续可添加公共卫生相关笔记 -->
                 </div>
             </div>
-        </div>
-        
-        <div class="instructions">
-            <h2>如何更新网站</h2>
-            <ol>
-                <li>在本地编辑Markdown文件（.md）</li>
-                <li>如果需要HTML版本，可以使用Markdown编辑器转换</li>
-                <li>将更新后的文件保存到本目录</li>
-                <li>提交到GitHub仓库</li>
-                <li>GitHub Pages会自动更新网站</li>
-            </ol>
+            
+            <!-- 生活分类 -->
+            <div class="category-section">
+                <h2 class="category-title">🌟 生活</h2>
+                <div class="note-grid">
+                    <div class="note-card">
+                        <h3>Vibe Coding 心得</h3>
+                        <p>关于Vibe Coding的学习心得和实践经验分享。</p>
+                        <div class="note-links">
+                            <a href="vibe coding心得.md">查看Markdown版本</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h2>如何更新网站</h2>
+                <ol>
+                    <li><strong>添加新笔记：</strong>在本地创建.md、.html或.pdf文件</li>
+                    <li><strong>分类管理：</strong>根据笔记内容，在index.html中对应分类下添加笔记卡片</li>
+                    <li><strong>更新链接：</strong>确保笔记卡片中的链接指向正确的文件路径</li>
+                    <li><strong>部署更新：</strong>
+                        <ul>
+                            <li>使用Git提交更改：<code>git add .</code></li>
+                            <li>提交信息：<code>git commit -m "添加新笔记"</code></li>
+                            <li>推送到GitHub：<code>git push</code></li>
+                        </ul>
+                    </li>
+                    <li><strong>访问网站：</strong>GitHub Pages会自动更新，通常在几分钟内生效</li>
+                </ol>
+                
+                <h3>支持的文件格式</h3>
+                <ul>
+                    <li><strong>Markdown (.md)：</strong>直接在浏览器中查看</li>
+                    <li><strong>HTML (.html)：</strong>直接在浏览器中查看</li>
+                    <li><strong>PDF (.pdf)：</strong>浏览器会自动打开或下载</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
